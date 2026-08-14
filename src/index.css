@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* root tokens for pitch-black monochrome glassmorphic design system */
+:root {
+  --bg-pitch-black: #000000;
+  --bg-gradient: linear-gradient(135deg, #0a0a0f 0%, #050508 45%, #000000 100%);
+  --text-pure-white: #ffffff;
+  --text-bright-gray: #f5f5f5;
+  --text-body-gray: #d4d4d4;
+  --text-muted-gray: #a3a3a3;
+  --text-dim-gray: #737373;
+
+  /* glass layer opacities */
+  --glass-subtle: rgba(255, 255, 255, 0.03);
+  --glass-card: rgba(255, 255, 255, 0.05);
+  --glass-header: rgba(255, 255, 255, 0.07);
+  --glass-hover: rgba(255, 255, 255, 0.09);
+  --glass-active: rgba(255, 255, 255, 0.12);
+
+  /* typography families */
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 16px;
+}
+
+/* strict zero shadows and zero text-shadows rule */
+*,
+*::before,
+*::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* base document styling */
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-bright-gray);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: transparent;
+  color: var(--text-bright-gray);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+/* strict border-none rule across elements */
+div, section, article, header, nav, footer, main, aside,
+button, input, textarea, select, .card, .badge, .btn, .glass-panel {
+  border: none !important;
+  border-color: transparent !important;
+  outline: none;
+}
+
+/* 85% responsive container layout */
+.app-container {
+  width: 85%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* flaticon uicons alignment rules */
+i.fi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 1em;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* custom glass utility classes */
+.glass-subtle {
+  background: var(--glass-subtle);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-card {
+  background: var(--glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-header {
+  background: var(--glass-header);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-hover:hover {
+  background: var(--glass-hover);
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
